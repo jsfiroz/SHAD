@@ -23,15 +23,15 @@
 //===----------------------------------------------------------------------===//
 
 
-#ifndef INCLUDE_SHAD_RUNTIME_TBB_TBB_SYNCHRONOUS_INTERFACE_H_
-#define INCLUDE_SHAD_RUNTIME_TBB_TBB_SYNCHRONOUS_INTERFACE_H_
+#ifndef INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_SYNCHRONOUS_INTERFACE_H_
+#define INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_SYNCHRONOUS_INTERFACE_H_
 
 #include <memory>
 #include <utility>
 
 #include "shad/runtime/locality.h"
-#include "shad/runtime/tbb/tbb_traits_mapping.h"
-#include "shad/runtime/tbb/tbb_utility.h"
+#include "shad/runtime/tbb/system_traits_mapping.h"
+#include "shad/runtime/tbb/system_utility.h"
 
 namespace shad {
 namespace rt {
@@ -201,4 +201,4 @@ struct SynchronousInterface<tbb_tag> {
 }  // namespace rt
 }  // namespace shad
 
-#endif  // INCLUDE_SHAD_RUNTIME_TBB_TBB_SYNCHRONOUS_INTERFACE_H_
+#endif  // INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_SYNCHRONOUS_INTERFACE_H_

@@ -23,8 +23,8 @@
 //===----------------------------------------------------------------------===//
 
 
-#ifndef INCLUDE_SHAD_RUNTIME_TBB_TBB_UTILITY_H_
-#define INCLUDE_SHAD_RUNTIME_TBB_TBB_UTILITY_H_
+#ifndef INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_UTILITY_H_
+#define INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_UTILITY_H_
 
 #include <cstddef>
 #include <cstdint>
@@ -54,4 +54,4 @@ inline void checkLocality(const Locality & loc) {
 }  // namespace shad
 
 
-#endif  // INCLUDE_SHAD_RUNTIME_TBB_TBB_UTILITY_H_
+#endif  // INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_UTILITY_H_

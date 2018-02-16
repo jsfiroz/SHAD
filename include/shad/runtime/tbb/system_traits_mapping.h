@@ -23,8 +23,8 @@
 //===----------------------------------------------------------------------===//
 
 
-#ifndef INCLUDE_SHAD_RUNTIME_TBB_TBB_TRAITS_MAPPING_H_
-#define INCLUDE_SHAD_RUNTIME_TBB_TBB_TRAITS_MAPPING_H_
+#ifndef INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_TRAITS_MAPPING_H_
+#define INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_TRAITS_MAPPING_H_
 
 #include <cstdint>
 #include <limits>
@@ -109,4 +109,4 @@ using TargetSystemTag = impl::tbb_tag;
 }  // namespace rt
 }  // namespace shad
 
-#endif  // INCLUDE_SHAD_RUNTIME_TBB_TBB_TRAITS_MAPPING_H_
+#endif  // INCLUDE_SHAD_RUNTIME_TBB_SYSTEM_TRAITS_MAPPING_H_

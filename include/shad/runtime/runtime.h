@@ -44,13 +44,9 @@
 #include "shad/runtime/locality.h"
 #include "shad/runtime/mapping_traits.h"
 #include "shad/runtime/synchronous_interface.h"
-#if defined HAVE_TBB
-#  include "shad/runtime/tbb/tbb_asynchronous_interface.h"
-#  include "shad/runtime/tbb/tbb_synchronous_interface.h"
-#  include "shad/runtime/tbb/tbb_traits_mapping.h"
-#else
-#  error Unsupported Runtime System
-#endif
+#include "system_asynchronous_interface.h"
+#include "system_synchronous_interface.h"
+#include "system_traits_mapping.h"
 
 /// @namespace shad
 namespace shad {
