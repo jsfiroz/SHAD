@@ -17,7 +17,7 @@ endif()
 target_link_libraries(test_gtest_remote_failure runtime shadtest_main)
 
 add_test(NAME test_gtest_remote_failure
-  COMMAND ${SHAD_TEST_COMMAND} $<TARGET_FILE:test_gtest_remote_failure>)
+  COMMAND ${SHAD_TEST_COMMAND} $<TARGET_FILE:test_gtest_remote_failure> --gtest_output=xml:test_gtest_remote_failure.xml)
 
 add_subdirectory(runtime)
 add_subdirectory(data_structures)

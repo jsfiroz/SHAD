@@ -1,2 +1,8 @@
 *~
 build*
+
+# ignore gtest generated xml
+test/*.xml
+
+# ignore Visual Studio Code files
+.vscode
