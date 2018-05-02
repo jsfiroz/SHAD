@@ -3,6 +3,7 @@ ei-triangle-count
 ei-page-rank
 ei-sssp
 ei-vertex_nomination
+ei-random_walk
 )
 
 

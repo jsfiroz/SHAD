@@ -73,6 +73,8 @@ class EdgeIndex
   };
   using BuffersVector =
       typename impl::BuffersVector<EntryT, EdgeIndex<SrcT, DestT, StorageT>>;
+  using EdgeStorage = typename StorageT::NeighborListStorageT;
+
 
   /// @brief Create method.
   ///
@@ -482,6 +484,24 @@ inline size_t EdgeIndex<SrcT, DestT, StorageT>::NumEdges() {
     }
   }
   return size;
+}
+
+template <typename SrcT, typename DestT, typename StorageT>
+void EdgeIndex<SrcT, DestT, StorageT>::GetNeighbors(const SrcT &src,
+		  typename StorageT::NeighborListStorageT *res) {
+  uint64_t targetId = HashFunction<SrcT>(src, 0) % rt::numLocalities();
+  rt::Locality targetLocality(targetId);
+  if (targetLocality == rt::thisLocality()) {
+    res = localIndex_.GetNeighbors(src);
+  } else {
+    auto neighborsLambda = [] (const std::tuple<ObjectID, SrcT> &args,
+                           typename StorageT::NeighborListStorageT *res) {
+      auto ptr = EdgeIndex<SrcT, DestT, StorageT>::GetPtr(std::get<0>(args));
+      res = ptr->localIndex_.GetNeighbors(std::get<1>(args));
+    };
+    rt::executeAtWithRet(targetLocality, neighborsLambda, 
+			 std::make_tuple(oid_, src), res);
+  }
 }
 
 template <typename SrcT, typename DestT, typename StorageT>
